@@ -7,7 +7,6 @@ import img5 from '../../assets/images/galleries/circus/2.jpg';
 import img6 from '../../assets/images/galleries/circus/3.jpg';
 import img7 from '../../assets/images/galleries/circus/4.jpg';
 import img8 from '../../assets/images/galleries/circus/6.jpg';
-import img9 from '../../assets/images/galleries/circus/6.jpg';
 import img10 from '../../assets/images/galleries/circus/7.jpg';
 import img11 from '../../assets/images/galleries/circus/8.jpg';
 import img12 from '../../assets/images/galleries/circus/9.jpg';
@@ -17,7 +16,7 @@ import '../../Styles/Galleries.scss';
 const Circus = () => {
   const images = [
     img1, img2, img3, img4, img5, img6,
-    img7, img8, img9, img10, img11, img12
+    img7, img8,  img10, img11, img12
   ];
 
   const scrollRef = useRef(null);

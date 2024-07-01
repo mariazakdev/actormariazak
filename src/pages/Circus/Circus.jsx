@@ -1,11 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react';
+import '../../Styles/Galleries.scss';
 
-export default class Circus extends Component {
-  render() {
-    return (
-      <div>
-        <h2>circus</h2>
+const Circus = () => {
+  const images = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    // Add more image URLs
+  ];
+
+  return (
+    <div className="gallery">
+      <h2>Circus Photos</h2>
+      <div className="gallery-grid">
+        {images.map((image, index) => (
+          <div key={index} className="gallery-item">
+            <img src={image} alt={`Acting ${index + 1}`} />
+          </div>
+        ))}
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
+
+export default Circus;

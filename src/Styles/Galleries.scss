@@ -1,6 +1,7 @@
 .gallery {
   padding: 20px;
   position: relative;
+  user-select: none; /* Prevent text selection during drag */
 
   h2 {
     text-align: center;
@@ -38,7 +39,11 @@
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
+    cursor: grab; /* Change cursor to indicate draggable area */
+  }
 
+  .gallery-container:active {
+    cursor: grabbing; /* Change cursor during dragging */
   }
 
   .gallery-item {
@@ -50,6 +55,5 @@
       height: 700px;
       display: block;
     }
-    
   }
 }

@@ -29,7 +29,7 @@ const Acting = () => {
 
   return (
     <div className="gallery">
-      <h2>Commercial Photos</h2>
+      <h2>Acting Photos</h2>
       <div className="scroll-buttons">
         <button onClick={scrollLeft} className="scroll-button left">{'<'}</button>
         <button onClick={scrollRight} className="scroll-button right">{'>'}</button>

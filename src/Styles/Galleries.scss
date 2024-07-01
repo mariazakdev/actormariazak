@@ -1,36 +1,55 @@
-// Mixin for responsive grid
-@mixin responsive-grid($columns) {
-    display: grid;
-    grid-template-columns: repeat($columns, 1fr);
-    gap: 10px;
+.gallery {
+  padding: 20px;
+  position: relative;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
   }
-  
-  .gallery {
-    padding: 20px;
-  
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
+
+  .scroll-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    .scroll-button {
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      pointer-events: all;
+      z-index: 1;
     }
-  
-    .gallery-grid {
-      @include responsive-grid(1); // Default to 1 column for mobile
-  
-      @media (min-width: 600px) { // Tablet
-        @include responsive-grid(2);
-      }
-  
-      @media (min-width: 900px) { // Desktop
-        @include responsive-grid(3);
-      }
+
+    .left {
+      left: 0;
     }
-  
-    .gallery-item {
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
+
+    .right {
+      right: 0;
     }
   }
-  
+
+  .gallery-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+  }
+
+  .gallery-item {
+    flex: 0 0 auto;
+    margin-right: 10px;
+
+    img {
+      width: 500px;
+      height: 700px;
+      display: block;
+    }
+    
+  }
+}

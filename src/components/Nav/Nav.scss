@@ -1,0 +1,36 @@
+// src/components/Nav.scss
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 10px 20px;
+    color: white;
+  
+    .logo img {
+      width: 100px;
+    }
+  
+    .nav-links {
+      display: flex;
+      list-style: none;
+      
+      li {
+        margin: 0 10px;
+        
+        a {
+          color: white;
+          text-decoration: none;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  
+    // .social-media-icons {
+    //   /* Add styles for social media icons */
+    // }
+  }
+  

@@ -57,3 +57,17 @@
     }
   }
 }
+.featured-video {
+  margin-bottom: 20px;
+}
+
+.video-reels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.video-reel {
+  width: calc(33.333% - 10px); /* Three videos per row */
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './Contact.scss';
 
 const Contact = () => {
@@ -19,17 +20,25 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    const mailtoLink = `mailto:mzakart@gmail.com?subject=Message%20from%20${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}%0A%0AFrom:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}`;
 
-    window.location.href = mailtoLink;
-
-    setFormData({
-      name: 'your name',
-      email: 'your email',
-      message: ''
-    });
-    setSubmitted(true);
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    )
+      .then((response) => {
+        console.log('Email sent successfully!', response.status, response.text);
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error('Failed to send email:', error);
+      });
   };
 
   return (

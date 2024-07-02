@@ -1,0 +1,53 @@
+/* Contact.scss */
+.contact__container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .contact__title {
+    text-align: center;
+    color: #333;
+  }
+  
+  .contact__form-group {
+    margin-bottom: 15px;
+  }
+  
+  .contact__label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .contact__input,
+  .contact__textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact__button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact__button:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact__thank-you-message {
+    text-align: center;
+    color: green;
+  }
+  

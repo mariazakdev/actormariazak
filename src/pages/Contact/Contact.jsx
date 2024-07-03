@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './Contact.scss';
+
+const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,17 +25,25 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    const mailtoLink = `mailto:mzakart@gmail.com?subject=Message%20from%20${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}%0A%0AFrom:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}`;
 
-    window.location.href = mailtoLink;
-
-    setFormData({
-      name: 'your name',
-      email: 'your email',
-      message: ''
-    });
-    setSubmitted(true);
+    emailjs.send(
+     serviceId,
+     templateId,
+      formData,
+      userId
+    )
+      .then((response) => {
+        console.log('Email sent successfully!', response.status, response.text);
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error('Failed to send email:', error);
+      });
   };
 
   return (
@@ -49,6 +63,7 @@ const Contact = () => {
             <input
               type="text"
               name="name"
+              placeholder="Your Name"
               className='contact__input'
               value={formData.name}
               onChange={handleChange}
@@ -60,6 +75,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
+              placeholder="Your Email"
               className='contact__input'
               value={formData.email}
               onChange={handleChange}

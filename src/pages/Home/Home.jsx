@@ -14,7 +14,7 @@ const Home = () => {
       <h1>Maria Zak Performance Site</h1>
       <div className="home-site">
         <section id="home">
-          <h2>Welcome to Maria Zak Performance Site</h2>
+        
         </section>
         <section id="dance">
           <Dance />

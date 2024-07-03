@@ -1,3 +1,5 @@
+@import "../Styles/mixins";
+// Image Gallery
 .gallery {
   padding: 20px;
   position: relative;
@@ -47,16 +49,41 @@
   }
 
   .gallery-item {
-    flex: 0 0 auto;
-    margin-right: 10px;
+    flex: 0 0 0;
+    
 
-    img {
-      width: 300px;
-      height: 500px;
-      display: block;
+  
+    @include mobile {
+      width: 100%; /* Full width on mobile */
+      img {
+        width: 100px;
+        height: 150px;
+        display: block;
+      }
+    }
+
+    @include tablet {
+      width: 50%; /* Two items per row on tablet */
+      img {
+        width: 150px;
+        height: 200px;
+        display: block;
+      }
+    }
+
+    @include desktop {
+      width: calc(33.333% - 10px); /* Three items per row on desktop */
+      img {
+        width: 300px;
+        height: 450px;
+        display: block;
+      }
     }
   }
 }
+// Video Gallery
+
+// Video Gallery
 .featured-video {
   margin-bottom: 20px;
 }
@@ -65,9 +92,23 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
 
-.video-reel {
-  width: calc(33.333% - 10px); /* Three videos per row */
-  cursor: pointer;
+  @include mobile {
+    .video-reel {
+      width: 100%; 
+      
+    }
+  }
+
+  @include tablet {
+    .video-reel {
+      width: 100%; 
+    }
+  }
+
+  @include desktop {
+    .video-reel {
+      width: calc(33.333% - 10px); 
+    }
+  }
 }

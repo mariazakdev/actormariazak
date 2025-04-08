@@ -9,14 +9,19 @@ import img7 from '../../assets/images/galleries/dance/6.jpg';
 import img8 from '../../assets/images/galleries/dance/7.jpg';
 import img9 from '../../assets/images/galleries/dance/8.jpg';
 import img10 from '../../assets/images/galleries/dance/9.jpg';
-
+import img11 from '../../assets/images/galleries/dance/11.jpg';
+import img12 from '../../assets/images/galleries/dance/12.jpg';
+import img13 from '../../assets/images/galleries/dance/13.jpg';
+import img14 from '../../assets/images/galleries/dance/14.jpg';
+import img15 from '../../assets/images/galleries/dance/15.jpg';
+import img16 from '../../assets/images/galleries/dance/16.jpg';
 
 import '../../Styles/Galleries.scss';
 
 const Dance = () => {
   const images = [
     img1, img2, img3, img4, img5, img6,
-    img7, img8, img9, img10
+    img7, img8, img9, img10, img11, img12, img13, img14, img15, img16
   ];
 
   const scrollRef = useRef(null);

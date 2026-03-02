@@ -12,8 +12,6 @@ import img11 from '../../assets/images/galleries/theatre/12.jpg';
 import img12 from '../../assets/images/galleries/theatre/14.jpg';
 import img13 from '../../assets/images/galleries/theatre/16.jpg';
 import img14 from '../../assets/images/galleries/theatre/17.jpg';
-import img16 from '../../assets/images/galleries/theatre/8(2).jpg';
-import img17 from '../../assets/images/galleries/theatre/17.jpg';
 import img18 from '../../assets/images/galleries/theatre/14.jpg';
 import img19 from '../../assets/images/galleries/theatre/18.jpg';
 
@@ -23,8 +21,8 @@ import '../../Styles/Galleries.scss';
 
 const Acting = () => {
   const images = [
-    img1, img2, img19, img3, img17,  img4, img5, img6, img16,
-    img7,  img9, img10, img11, img12, img13, img14, img18 
+    img1, img2, img11,img19, img3,  img4, img5, img6, 
+    img7,  img9, img10,  img12, img13, img14, img18 
   ];
 
   const scrollRef = useRef(null);
